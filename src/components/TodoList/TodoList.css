@@ -1,0 +1,7 @@
+section{
+    overflow: auto;
+    margin-bottom: 1rem;
+}
+::-webkit-scrollbar {
+    display: none;
+}

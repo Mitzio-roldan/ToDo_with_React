@@ -1,0 +1,144 @@
+.gg-check {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    transition: 0.3s;
+}
+.gg-check::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    width: 6px;
+    height: 10px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg)
+}
+.gg-check:hover, .gg-check.active{
+    color: greenyellow;
+}
+
+.gg-close {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px
+}
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px
+}
+.gg-close::after {
+    transform: rotate(-45deg)
+}
+.gg-close:hover, .gg-close.active {
+    color: red;
+}
+
+
+
+.gg-trash {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 10px;
+    height: 10px;
+    color: #767676;
+    border: 2px solid transparent;
+    box-shadow:
+        0 0 0 2px,
+        inset -2px 0 0,
+        inset 2px 0 0;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    margin-top: 4px;
+    transition: 0.3s;
+    
+}
+.gg-trash::after,
+.gg-trash::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-trash::after {
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px
+}
+.gg-trash::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -1.5px
+}
+.gg-trash:hover{
+    color: #951414;
+}
+
+
+.li-todo{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 50%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 1.5rem;
+
+}
+
+.li-todo > p{
+    text-align: center;
+    width: 50%;
+}
+
+.li-todo > p.active{
+    text-decoration: line-through;
+}
+
+.span-close{
+    position: absolute;
+    top: -8px;
+    right: 0;
+    background-color: #212121;
+}
+
+@media (max-width: 600px) {
+    .li-todo {
+      width: 70%;
+    }
+}
