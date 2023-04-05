@@ -14,8 +14,8 @@ function TodoProvaider(props) {
         } = useLocalStorage('ToDo_V1', [])
       const [searchValue, setSearchValue] = React.useState('');
       const [modal, setModal] = React.useState(false);
-      const todoCompletes = todos.filter(todo => todo.completed).length
       const totalTodos = todos.length  
+      const todoCompletes = todos.filter(todo => todo.completed).length
       const completedTodo = (id) =>{
         const indexTodo = todos.findIndex(todo => todo.id === id)
         let newTodos = [...todos]

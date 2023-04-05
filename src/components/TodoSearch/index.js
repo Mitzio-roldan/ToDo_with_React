@@ -5,7 +5,6 @@ import './TodoSearch.css'
 const TodoSearch = () => {
   const {searchValue, setSearchValue} = React.useContext(TodoContext)
   const onBuscar = (element) =>{
-    console.log(element.target.value); 
     setSearchValue(element.target.value);
   }
 

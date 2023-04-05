@@ -10,7 +10,7 @@ import React, { useContext } from "react";
 import './App.css'
 
 const AppUI = (props) =>{
-  const {loading, error, searchTodo, completedTodo, deletedTodo, modal, setModal} = useContext(TodoContext)  
+  const {loading, error, searchTodo, totalTodos, completedTodo, deletedTodo, modal, setModal, searchValue} = useContext(TodoContext)  
   return (
         <>
         <TodoCounter/>
@@ -18,6 +18,8 @@ const AppUI = (props) =>{
         <TodoList>
         {loading && <div className="dots-bars-4"></div>}
         {error && <p>Ocurrio un Error</p>}
+        {(totalTodos <= 0 && !loading && !searchValue) && <p className='pMsj'>Crea tu primer ToDo!</p>}
+        {(!searchTodo.length && !loading && searchValue) && <p className='pMsj'>No se encuentra nada con {searchValue}</p>}
         {searchTodo.map(todo =>{
           return <TodoItem 
           key={todo.id}

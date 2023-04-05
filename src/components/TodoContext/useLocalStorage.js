@@ -9,9 +9,10 @@ function useLocalStorage (itemName, initialValue){
         setTimeout(()=>{
           let todoList;
           const localStorageTodos = localStorage.getItem(itemName)
-          if (localStorageTodos === undefined) {
+          if (!localStorageTodos) {
             localStorage.setItem(itemName, JSON.stringify(initialValue))
             todoList = []
+            setLoading(false)
           }else{
             todoList = JSON.parse(localStorageTodos)
             setItem(todoList)
